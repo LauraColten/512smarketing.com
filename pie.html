@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Pie Chart</title>
+	<script async="" src="pie_files/analytics.js"></script><script src="pie_files/Chart.js"></script>
+	<script src="pie_files/utils.js"></script>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+<body tcap-name="mainman">
+	<div id="canvas-holder" style="width:40%"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+		<canvas id="chart-area" style="display: block; height: 211px; width: 423px;" width="846" height="422" class="chartjs-render-monitor"></canvas>
+	</div>
+	<script>
+		var randomScalingFactor = function() {
+			return Math.round(Math.random() * 100);
+		};
+
+		var backgroundColor = [
+			'#ff5252',
+			'#7c4dff',
+			'#69f0ae',
+			'#ff8f00',
+			'#29b6f6',
+			'#e040fb',
+			'#ff6e40',
+			'#009688',
+			'#40c4ff',
+			'#536dfe',
+			'#ff4081'
+		]
+
+		var config = {
+			type: 'pie',
+			data: {
+				datasets: [{
+					data: [
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						0,
+						0,
+						0,
+						0,
+						0,
+						0
+					],
+					backgroundColor: backgroundColor,
+				},
+				{
+					backgroundColor: backgroundColor,
+					"data": [
+						0,
+						0,
+						0,
+						0,
+						0,
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						0,
+						0
+					],
+				},
+				{
+					backgroundColor: backgroundColor,
+					"data": [
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						0,
+						randomScalingFactor(),
+						randomScalingFactor()
+					],
+				}],
+				labels: [
+					'18-19',
+					'20-21',
+					'22-23',
+					'24-25',
+					'26-27',
+					'White',
+					'Black',
+					'Hispanic',
+					'Asian',
+					'Male',
+					'Female'
+				]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: 'Demographics'
+				},
+				legend: {
+					labels: {
+						fontSize: 10,
+						boxWidth: 25
+					}
+				}
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('chart-area').getContext('2d');
+			window.myPie = new Chart(ctx, config);
+		};
+	</script>
+
+
+
+</body></html>

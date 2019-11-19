@@ -23,16 +23,22 @@
   <link rel="stylesheet" href="https://austindevs.github.io/front/assets/vendor/fancybox/jquery.fancybox.css">
   <link rel="stylesheet" href="https://austindevs.github.io/front/assets/vendor/dzsparallaxer/dzsparallaxer.css">
 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" /> -->
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="https://austindevs.github.io/front/assets/css/theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+  <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+    #mapid { width: 100%; height: 400px }
+  </style>
 </head>
 
 <body id="homeSection">
-  <div class="position-absolute w-100" style="height: 180px; border: 1px solid black"></div>
+  <div class="position-absolute w-100" style="height: 180px; border-bottom: 1px solid black"></div>
   <!-- ========== HEADER ========== -->
-  <header id="header" class="u-header u-header--white-bg-on-scroll u-header--bg-transparent">
+  <header id="header" class="u-header u-header--bg-transparent">
     <div class="u-header__section d-flex justify-content-center">
-      <img src="/assets/images/Color logo with background.png" style="width: 300px" />
+      <img src="/assets/images/Black logo - white circle.png" style="width: 300px; height: 100%" />
     </div>
   </header>
   <!-- ========== END HEADER ========== -->
@@ -40,37 +46,38 @@
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Hero Section -->
-    <div class="d-lg-flex position-relative border-bottom border-dark z-index-2">
+    <div class="d-lg-flex position-relative z-index-2">
       <div
-        class="container d-lg-flex align-items-lg-center flex-lg-wrap height-lg-100vh text-center space-top-2 space-top-md-4 space-top-lg-3">
-        <div class="w-100 mx-auto mb-9 mb-lg-0">
+        class="container-fluid d-lg-flex align-items-lg-center flex-lg-wrap text-center space-top-2 space-top-md-3">
+        <div class="mx-auto mb-9 mb-lg-0">
           <div class="mb-5">
-            <h1 class="display-4 font-size-md-down-5 font-weight-semi-bold">MARKET SMARTER &nbsp; SELL HARDER</h1>
+            <h1 class="display-4 font-size-md-down-5 font-weight-semi-bold row">
+              <div class="col-md-7 text-md-right">MARKET SMARTER</div>
+              <div class="col-md-5 text-md-left">SELL HARDER</div>
+            </h1>
             <!-- Title -->
             <div class="w-md-60 text-center mx-md-auto mb-4">
               <h2 class="h4 font-weight-light text-muted">
                 512 Smarketing is an Austin, Texas based marketing and sales operations agency.
-                We focuse on the technical framework to better connect companies to their customers.
+                We focus on the technical framework to better connect companies to their customers.
               </h2>
             </div>
             <!-- End Title -->
           </div>
         </div>
-
-        <div class="w-lg-50 mx-lg-auto d-flex justify-content-center">
-          <img src="/assets/images/austin-2.png" alt="Image Description">
-        </div>
       </div>
     </div>
     <!-- End Hero Section -->
-
+    <div class="container px-0 border-bottom border-dark">
+      <img src="/assets/images/austin-2.png" alt="Image Description" class="w-100">
+    </div>
     <!-- Features Section -->
     <div id="featuresSection" class="container space-2 space-md-3">
 
       <!-- Title -->
       <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
         <h3 class="h2 font-weight-semi-bold">DATA DRIVEN DECISION MAKING</h2>
-          <p class="h4 text-muted">
+          <p class="h4 text-muted font-weight-light">
             Gain insight from your data.
           </p>
       </div>
@@ -137,74 +144,45 @@
           <div class="tab-pane fade pt-9 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
             <!-- Mockup Block -->
             <div class="row justify-content-lg-between">
-              <div class="col-lg-4 mb-9 mb-lg-0">
+              <div class="col-lg-4 mb-lg-0 d-flex flex-column flex-md-row flex-lg-column">
                 <!-- Info -->
-                <div class="mb-5">
+                <div class="w-md-50 w-lg-100 pl-md-5">
                   <h3 class="h4 font-weight-semi-bold">Data Collection</h3>
                   <p>We implement advanced techniques to collect and track customers.</p>
                 </div>
-
-                <ul class="list-unstyled text-secondary font-size-1">
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Browser and Call Tracking
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Form Submissions
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      CRM Management
-                    </span>
-                  </li>
-                </ul>
+                <div class="w-md-50 w-lg-100">
+                  <ul class="list-unstyled text-secondary font-size-1">
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Browser and Call Tracking
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Form Submissions
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        CRM Management
+                      </span>
+                    </li>
+                  </ul>
+                </div>
                 <!-- End Info -->
               </div>
 
               <div class="col-lg-8 position-relative">
-                <div class="pl-md-9">
+                <div>
                   <!-- Indicator -->
                   <div class="card">
                     <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
                       <!-- Title & Settings -->
                       <div class="d-flex justify-content-between align-items-center">
                         <h4 class="h6 mb-0">Activity</h4>
-
-                        <!-- Settings Dropdown -->
-                        <div class="position-relative">
-                          <a id="activitySettingsDropdownInvoker"
-                            class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;"
-                            role="button" aria-controls="activitySettingsDropdown" aria-haspopup="true"
-                            aria-expanded="false" data-unfold-event="click"
-                            data-unfold-target="#activitySettingsDropdown" data-unfold-type="css-animation"
-                            data-unfold-duration="300" data-unfold-delay="300" data-unfold-hide-on-scroll="true"
-                            data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                            <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                          </a>
-
-                          <div id="activitySettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right"
-                            aria-labelledby="activitySettingsDropdownInvoker" style="min-width: 190px;">
-                            <a class="dropdown-item" href="#">
-                              <small class="fas fa-eye dropdown-item-icon"></small>
-                              Mark as read
-                            </a>
-                            <a class="dropdown-item" href="#">
-                              <small class="fas fa-eye-slash dropdown-item-icon"></small>
-                              Mark as unread
-                            </a>
-                            <a class="dropdown-item" href="#">
-                              <small class="fas fa-archive dropdown-item-icon"></small>
-                              Archive
-                            </a>
-                          </div>
-                        </div>
-                        <!-- End Settings Dropdown -->
                       </div>
                       <!-- End Title & Settings -->
 
@@ -220,7 +198,7 @@
                               </span>
                               <div class="media-body">
                                 <h5 class="font-size-1 mb-1">Amanta Owens</h5>
-                                <p class="small mb-1">Added new task: <span class="font-weight-medium">Slack home page
+                                <p class="small mb-1">Submitted a contact from: <span class="font-weight-medium">Contact Page
                                     redesign</span></p>
                                 <small class="d-block text-muted">30 min ago</small>
                               </div>
@@ -232,7 +210,7 @@
                               </span>
                               <div class="media-body">
                                 <h5 class="font-size-1 mb-1">Sebastian Diaz</h5>
-                                <p class="small mb-1">Added new task: <span class="font-weight-medium">Mapbox logo
+                                <p class="small mb-1">Downloaded an Ebook: <span class="font-weight-medium">Product Page
                                     redesign</span></p>
                                 <small class="d-block text-muted">44 min ago</small>
                               </div>
@@ -244,8 +222,7 @@
                               </span>
                               <div class="media-body">
                                 <h5 class="font-size-1 mb-1">Eliza Donovan</h5>
-                                <p class="small mb-1">Added new task: <span class="font-weight-medium">Spotify
-                                    branding</span></p>
+                                <p class="small mb-1">Converted into a customer: <span class="font-weight-medium">Checkout</span></p>
                                 <small class="d-block text-muted">1 hour ago</small>
                               </div>
                             </li>
@@ -256,21 +233,8 @@
                               </span>
                               <div class="media-body">
                                 <h5 class="font-size-1 mb-1">Cler Lockhart</h5>
-                                <p class="small mb-1">Added new task: <span class="font-weight-medium">Dropbox home page
-                                    redesign</span></p>
+                                <p class="small mb-1">Called for more information
                                 <small class="d-block text-muted">15 hours ago</small>
-                              </div>
-                            </li>
-
-                            <li class="media u-indicator-vertical-dashed-item">
-                              <span class="btn btn-xs btn-icon btn-danger rounded-circle mr-3">
-                                <span class="btn-icon__inner">J</span>
-                              </span>
-                              <div class="media-body">
-                                <h5 class="font-size-1 mb-1">James Collins</h5>
-                                <p class="small mb-1">Added new task: <span class="font-weight-medium">InVison
-                                    branding</span></p>
-                                <small class="d-block text-muted">1 day ago</small>
                               </div>
                             </li>
                           </ul>
@@ -288,720 +252,153 @@
           <div class="tab-pane fade pt-9" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
             <!-- Mockup Block -->
             <div class="row justify-content-lg-between">
-              <div class="col-lg-4 mb-9 mb-lg-0">
+              <div class="col-lg-4 mb-9 mb-lg-0  d-flex flex-column flex-md-row flex-lg-column">
                 <!-- Info -->
-                <div class="mb-5">
-                  <h3 class="h4 font-weight-semi-bold">Data Manipulation</h3>
-                  <p>We organize date so it is easier to locate and analyze patterns.</p>
+                <div class="w-md-50 w-lg-100">
+                    <h3 class="h4 font-weight-semi-bold">Data Manipulation</h3>
+                    <p class="mb-0">We organize data so it is easier to locate and analyze patterns.</p>
                 </div>
-
-                <ul class="list-unstyled text-secondary font-size-1">
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Generate Reports
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Complete Missing Data Using Machine Learning
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Identify Trends
-                    </span>
-                  </li>
-                </ul>
+                <div class="w-md-50 w-lg-100 pl-md-5">
+                  <ul class="list-unstyled text-secondary font-size-1">
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Generate Reports
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Complete Missing Data Using Machine Learning
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Identify Trends
+                      </span>
+                    </li>
+                  </ul>
+                </div>
                 <!-- End Info -->
               </div>
 
               <div class="col-lg-8 position-relative">
-                <div>
-                  <!-- Activity Table -->
-                  <div class="table-responsive-md u-datatable">
-                    <table
-                      class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
-                      data-dt-info="#datatableInfo" data-dt-search="#datatableSearch"
-                      data-dt-entries="#datatableEntries" data-dt-page-length="12" data-dt-is-responsive="false"
-                      data-dt-is-show-paging="true" data-dt-details-invoker=".js-datatabale-details"
-                      data-dt-select-all-control="#invoiceToggleAllCheckbox" data-dt-pagination="datatablePagination"
-                      data-dt-pagination-classes="pagination mb-0" data-dt-pagination-items-classes="page-item"
-                      data-dt-pagination-links-classes="page-link" data-dt-pagination-next-classes="page-item"
-                      data-dt-pagination-next-link-classes="page-link"
-                      data-dt-pagination-next-link-markup='<span aria-hidden="true">&raquo;</span>'
-                      data-dt-pagination-prev-classes="page-item" data-dt-pagination-prev-link-classes="page-link"
-                      data-dt-pagination-prev-link-markup='<span aria-hidden="true">&laquo;</span>'>
-                      <thead>
-                        <tr class="text-uppercase font-size-1">
-                          <th scope="col">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceToggleAllCheckbox">
-                              <label class="custom-control-label" for="invoiceToggleAllCheckbox">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </th>
-                          <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                              Order
-                              <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                              </div>
-                            </div>
-                          </th>
-                          <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                              Client
-                              <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                              </div>
-                            </div>
-                          </th>
-                          <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                              Amount
-                              <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                              </div>
-                            </div>
-                          </th>
-                          <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                              Date
-                              <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                              </div>
-                            </div>
-                          </th>
-                          <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                              Status
-                              <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                              </div>
-                            </div>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody class="font-size-1">
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">05 May, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">Spotify</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">128746739419</span>
-                      </div>
+                <div class="card">
+                  <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
+                    <!-- Title & Settings -->
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h4 class="h6 mb-0">Raw Data</h4>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">Spotify</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">$9.00</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">$9.37</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox01">
-                              <label class="custom-control-label" for="invoiceCheckbox01">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR001
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-success rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">S</span>
-                              </span>
-                              <span>Spotify</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$9.00</td>
-                          <td class="align-middle text-secondary">05 May</td>
-                          <td class="align-middle text-danger">Rejected</td>
-                        </tr>
+                    <!-- End Title & Settings -->
 
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">12 May, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">Dropbox</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">901274182319</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">Dropbox</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">$257.93</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">$257.43</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox02">
-                              <label class="custom-control-label" for="invoiceCheckbox02">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR002
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">D</span>
-                              </span>
-                              <span>Dropbox</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$257.93</td>
-                          <td class="align-middle text-secondary">12 May</td>
-                          <td class="align-middle text-success">Completed</td>
-                        </tr>
+                    <hr class="mt-3 mb-4">
 
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">15 May, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">Google</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">9241291229</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">Google</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">441.49 USD</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">441.99 USD</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox03">
-                              <label class="custom-control-label" for="invoiceCheckbox03">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR003
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-danger rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">G</span>
-                              </span>
-                              <span>Google</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$441.99</td>
-                          <td class="align-middle text-secondary">15 May</td>
-                          <td class="align-middle text-success">Completed</td>
-                        </tr>
-
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">01 Jun, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">FrontApp</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">4191239108931</span>
+                    <div class="overflow-hidden">
+                      <div class="js-scrollbar pr-3" style="max-height: 300px;">
+                        <!-- Activity Table -->
+                        <div class="table-responsive-md u-datatable">
+                          <table
+                            class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5">
+                            <thead>
+                              <tr class="text-uppercase font-size-1">
+                                <th scope="col" class="font-weight-medium">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    Gender
+                                    <div class="ml-2">
+                                      <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                      <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                    </div>
+                                  </div>
+                                </th>
+                                <th scope="col" class="font-weight-medium">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    Ethnicity
+                                    <div class="ml-2">
+                                      <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                      <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                    </div>
+                                  </div>
+                                </th>
+                                <th scope="col" class="font-weight-medium">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    Age
+                                    <div class="ml-2">
+                                      <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                      <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                    </div>
+                                  </div>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody class="font-size-1">
+                              <tr class="js-datatabale-details">
+                                <td class="align-middle">
+                                  <div class="media align-items-center">
+                                    <span class="btn btn-sm btn-icon btn-soft-danger rounded-circle mr-2">
+                                      <span class="btn-icon__inner font-weight-medium">F</span>
+                                    </span>
+                                    <span>Female</span>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-dark">Hispanic</td>
+                                <td class="align-middle text-secondary">20 - 22</td>
+                              </tr>
+                              <tr class="js-datatabale-details">
+                                <td class="align-middle">
+                                  <div class="media align-items-center">
+                                    <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle mr-2">
+                                      <span class="btn-icon__inner font-weight-medium">M</span>
+                                    </span>
+                                    <span>Male</span>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-dark">White</td>
+                                <td class="align-middle text-secondary">24 - 26</td>
+                              </tr>
+                              <tr class="js-datatabale-details">
+                                <td class="align-middle">
+                                  <div class="media align-items-center">
+                                    <span class="btn btn-sm btn-icon btn-soft-danger rounded-circle mr-2">
+                                      <span class="btn-icon__inner font-weight-medium">F</span>
+                                    </span>
+                                    <span>Female</span>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-dark">White</td>
+                                <td class="align-middle text-secondary">26 - 28</td>
+                              </tr>
+                                <tr class="js-datatabale-details">
+                                    <td class="align-middle">
+                                      <div class="media align-items-center">
+                                        <span class="btn btn-sm btn-icon btn-soft-danger rounded-circle mr-2">
+                                          <span class="btn-icon__inner font-weight-medium">F</span>
+                                        </span>
+                                        <span>Female</span>
+                                      </div>
+                                    </td>
+                                    <td class="align-middle text-dark">Black</td>
+                                    <td class="align-middle text-secondary">20 - 22</td>
+                                  </tr>
+                                  <tr class="js-datatabale-details">
+                                      <td class="align-middle">
+                                        <div class="media align-items-center">
+                                          <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle mr-2">
+                                            <span class="btn-icon__inner font-weight-medium">M</span>
+                                          </span>
+                                          <span>Male</span>
+                                        </div>
+                                      </td>
+                                      <td class="align-middle text-dark">Asian</td>
+                                      <td class="align-middle text-secondary">26 - 28</td>
+                                    </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- End Activity Table -->
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">FrontApp</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">98.50 USD</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">99.00 USD</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox04">
-                              <label class="custom-control-label" for="invoiceCheckbox04">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR004
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">F</span>
-                              </span>
-                              <span>FrontApp</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$99.00</td>
-                          <td class="align-middle text-secondary">01 Jun</td>
-                          <td class="align-middle text-warning">Pending</td>
-                        </tr>
-
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">02 Jun, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">Slack</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">12901372109401</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">Slack</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">14.39 USD</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">14.89 USD</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox05">
-                              <label class="custom-control-label" for="invoiceCheckbox05">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR005
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-warning rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">S</span>
-                              </span>
-                              <span>Slack</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$14.89</td>
-                          <td class="align-middle text-secondary">02 Jun</td>
-                          <td class="align-middle text-danger">Rejected</td>
-                        </tr>
-
-                        <tr class="js-datatabale-details" data-details='
-                  <div class="border rounded p-5">
-                    <h4 class="h3">Invoice</h4>
-                    <div class="row mb-6">
-                      <div class="col-3">
-                        <span class="text-secondary">Date:</span>
-                        <span class="font-weight-medium">05 Jun, 2018</span>
-                      </div>
-                      <div class="col-3">
-                        <span class="text-secondary">Merchant:</span>
-                        <span class="font-weight-medium">Spotify</span>
-                      </div>
-                      <div class="col-6">
-                        <span class="text-secondary">Authorization code:</span>
-                        <span class="font-weight-medium">8723903814282</span>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 mb-3 mb-sm-0">
-                        <h5 class="text-dark font-size-1 text-uppercase">Billing address:</h5>
-                        <address class="text-secondary">
-                          <h6 class="h5 text-dark">Spotify</h6>
-                          Flat 60, Ross Green, South Lilyberg, Q7M 8ZV
-                        </address>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5 class="text-dark font-size-1 text-uppercase">Client info:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="mb-2">
-                            <span class="text-secondary">First name:</span>
-                            <span class="font-weight-medium">Natalie</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Last name:</span>
-                            <span class="font-weight-medium">Curtis</span>
-                          </li>
-                          <li class="mb-2">
-                            <span class="text-secondary">Country:</span>
-                            <span class="font-weight-medium">England</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="row justify-content-end mb-4">
-                      <div class="col-sm-6">
-                        <hr class="my-4">
-                        <h5 class="text-dark font-size-1 text-uppercase">Transaction details:</h5>
-                        <ul class="list-unstyled mb-0">
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Transaction amount</span>
-                            <span class="font-weight-medium">8.50 USD</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Fee</span>
-                            <span class="font-weight-medium">$0.50</span>
-                          </li>
-                          <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-secondary">Total amount</span>
-                            <span class="text-primary font-weight-medium">9.00 USD</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item u-ver-divider pr-3 mr-3">
-                        <a href="#">
-                          <span class="fas fa-file-word text-secondary mr-1"></span>
-                          Download invoice
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a href="#">
-                          <span class="fas fa-print text-secondary mr-1"></span>
-                          Print details
-                        </a>
-                      </li>
-                    </ul>
-                  </div>'>
-                          <td class="align-middle">
-                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                              <input type="checkbox" class="custom-control-input" id="invoiceCheckbox06">
-                              <label class="custom-control-label" for="invoiceCheckbox06">
-                                <span class="text-hide">Checkbox</span>
-                              </label>
-                            </div>
-                          </td>
-                          <td class="align-middle text-secondary font-weight-normal u-datatable__trigger-icon">FR006
-                          </td>
-                          <td class="align-middle">
-                            <div class="media align-items-center">
-                              <span class="btn btn-sm btn-icon btn-soft-success rounded-circle mr-2">
-                                <span class="btn-icon__inner font-weight-medium">D</span>
-                              </span>
-                              <span>Spotify</span>
-                            </div>
-                          </td>
-                          <td class="align-middle text-primary">$9.00</td>
-                          <td class="align-middle text-secondary">05 Jun</td>
-                          <td class="align-middle text-success">Completed</td>
-                        </tr>
-                      </tbody>
-                    </table>
                   </div>
-                  <!-- End Activity Table -->
-
                 </div>
               </div>
             </div>
@@ -1010,121 +407,40 @@
           <div class="tab-pane fade pt-9" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
             <!-- Mockup Block -->
             <div class="row justify-content-lg-between">
-              <div class="col-lg-4 mb-9 mb-lg-0">
+              <div class="col-lg-4 mb-9 mb-lg-0 d-flex flex-column flex-md-row flex-lg-column">
                 <!-- Info -->
-                <div class="mb-5">
+                <div class="w-md-50 w-lg-100">
                   <h3 class="h4 font-weight-semi-bold">Data Visualization</h3>
                   <p>We incorporate visual elements to provide an accessible way to understand data patterns.</p>
                 </div>
-
-                <ul class="list-unstyled text-secondary font-size-1">
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Generate Interactive Graphs and Charts
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      See Data that is Easily Understood
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Increase Communication Across Departments
-                    </span>
-                  </li>
-                </ul>
+                <div class="w-md-50 w-lg-100 pl-md-5">
+                  <ul class="list-unstyled text-secondary font-size-1">
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Generate Interactive Graphs and Charts
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        See Data that is Easily Understood
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Increase Communication Across Departments
+                      </span>
+                    </li>
+                  </ul>
+                </div>
                 <!-- End Info -->
               </div>
 
-              <div class="col-lg-8 position-relative">
-                <div>
-                  <div id="canvas-holder" style="width:100%">
-                    <canvas id="chart-area"></canvas>
-                  </div>
-                  <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
-                  <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-                  <script>
-                    var randomScalingFactor = function () {
-                      return Math.round(Math.random() * 100);
-                    };
-
-                    var config = {
-                      type: 'pie',
-                      data: {
-                        datasets: [{
-                          data: [
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                            randomScalingFactor(),
-                          ],
-                          backgroundColor: [
-                            window.chartColors.red,
-                            window.chartColors.orange,
-                            window.chartColors.yellow,
-                            window.chartColors.green,
-                            window.chartColors.blue,
-                          ],
-                          label: 'Dataset 1'
-                        }],
-                        labels: [
-                          'Red',
-                          'Orange',
-                          'Yellow',
-                          'Green',
-                          'Blue'
-                        ]
-                      },
-                      options: {
-                        responsive: true
-                      }
-                    };
-
-                    window.onload = function () {
-                      var ctx = document.getElementById('chart-area').getContext('2d');
-                      window.myPie = new Chart(ctx, config);
-                    };
-
-                    document.getElementById('randomizeData').addEventListener('click', function () {
-                      config.data.datasets.forEach(function (dataset) {
-                        dataset.data = dataset.data.map(function () {
-                          return randomScalingFactor();
-                        });
-                      });
-
-                      window.myPie.update();
-                    });
-
-                    var colorNames = Object.keys(window.chartColors);
-                    document.getElementById('addDataset').addEventListener('click', function () {
-                      var newDataset = {
-                        backgroundColor: [],
-                        data: [],
-                        label: 'New dataset ' + config.data.datasets.length,
-                      };
-
-                      for (var index = 0; index < config.data.labels.length; ++index) {
-                        newDataset.data.push(randomScalingFactor());
-
-                        var colorName = colorNames[index % colorNames.length];
-                        var newColor = window.chartColors[colorName];
-                        newDataset.backgroundColor.push(newColor);
-                      }
-
-                      config.data.datasets.push(newDataset);
-                      window.myPie.update();
-                    });
-
-                    document.getElementById('removeDataset').addEventListener('click', function () {
-                      config.data.datasets.splice(0, 1);
-                      window.myPie.update();
-                    });
-                  </script>
+              <div class="col-lg-8 mb-9 mb-lg-0  d-flex flex-column align-items-center align-items-lg-start">
+                <div class="chart-container" style="position: relative; height:100%; width:100%">
+                  <canvas id="chart-area"></canvas>
                 </div>
               </div>
             </div>
@@ -1133,126 +449,89 @@
           <div class="tab-pane fade pt-9" id="pills-four" role="tabpanel" aria-labelledby="pills-four-tab">
             <!-- Mockup Block -->
             <div class="row justify-content-lg-between">
-              <div class="col-lg-4 mb-9 mb-lg-0">
+              <div class="col-lg-4 mb-9 mb-lg-0 d-flex flex-column flex-md-row flex-lg-column">
                 <!-- Info -->
-                <div class="mb-5">
+                <div class="w-md-50 w-lg-100">
                   <h3 class="h4 font-weight-semi-bold">Data Personification</h3>
                   <p>We create representations of your current and perspective customers from real data.</p>
                 </div>
-
-                <ul class="list-unstyled text-secondary font-size-1">
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Create Buyer Personas
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Target Specific Audiences
-                    </span>
-                  </li>
-                  <li class="media my-3">
-                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
-                    <span class="media-body">
-                      Understand Your Customer Base
-                    </span>
-                  </li>
-                </ul>
+                <div class="pl-md-5 w-md-50 w-lg-100">
+                  <ul class="list-unstyled text-secondary font-size-1">
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Create Buyer Personas
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Target Specific Audiences
+                      </span>
+                    </li>
+                    <li class="media my-3">
+                      <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                      <span class="media-body">
+                        Understand Your Customer Base
+                      </span>
+                    </li>
+                  </ul>
+                </div>
                 <!-- End Info -->
               </div>
 
-              <div class="col-lg-8 position-relative">
-                <div class="d-flex justify-content-between">
-                  <!-- User Profile Section -->
-                  <div class="media d-flex flex-column align-items-center">
-                    <div class="u-xl-avatar position-relative mb-3 mb-sm-0 mr-4">
-                      <img class="img-fluid rounded-circle" src="/assets/images/Hispanic female avatar.png"
-                        alt="Image Description">
+              <div class="col-lg-7 d-flex flex-column align-items-center align-items-lg-start">
+                <!-- Contacts  -->
+                  <div class="card mb-4 w-100">
+                    <div class="card-header pt-4 pb-3 px-0 mx-4">
+                      <h2 class="h6 mb-0">Personas</h2>
                     </div>
 
-                    <div class="media-body">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <h1 class="h3 font-weight-medium">Eden S</h1>
-                      </div>
+                    <div class="card-body pt-3 pb-4 px-4">
+                      <!-- User -->
+                      <a class="d-flex align-items-start mb-4" href="#">
+                        <div class="position-relative u-avatar">
+                          <img class="img-fluid rounded-circle" src="/assets/images/Hispanic female avatar.png" alt="Image Description">
+                          <span class="badge badge-xs badge-outline-success badge-pos badge-pos--bottom-right rounded-circle"></span>
+                        </div>
 
-                      <div class="row text-secondary font-size-1 mb-2 flex-column">
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Age: </span>
-                          <span>19</span>
+                        <div class="ml-3">
+                          <span class="d-block text-dark">Sofia</span>
+                          <small class="d-block text-secondary">Hispanic Female Age 20 - 23</small>
                         </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Ethnicity: </span>
-                          <span>Hispanic</span>
-                        </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Gender: </span>
-                          <span>Female</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End User Profile Section -->
-                  <!-- User Profile Section -->
-                  <div class="media d-flex flex-column align-items-center">
-                    <div class="u-xl-avatar position-relative mb-3 mb-sm-0 mr-4">
-                      <img class="img-fluid rounded-circle" src="/assets/images/female white avatar.png"
-                        alt="Image Description">
-                    </div>
+                      </a>
+                      <!-- End User -->
 
-                    <div class="media-body">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <h1 class="h3 font-weight-medium">Eve H</h1>
-                      </div>
+                      <!-- User -->
+                      <a class="d-flex align-items-start mb-4" href="#">
+                        <span class="btn btn-icon btn-soft-danger rounded-circle">
+                          <img class="img-fluid rounded-circle" src="/assets/images/female white avatar.png" alt="Image Description">
+                          <span class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
+                        </span>
 
-                      <div class="row text-secondary font-size-1 mb-2 flex-column">
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Age: </span>
-                          <span>47</span>
+                        <div class="ml-3">
+                          <span class="d-block text-dark">Harper</span>
+                          <small class="d-block text-secondary">White Female Age 18 - 20</small>
                         </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Ethnicity: </span>
-                          <span>White</span>
+                      </a>
+                      <!-- End User -->
+
+                      <!-- User -->
+                      <a class="d-flex align-items-start mb-4" href="#">
+                        <div class="position-relative u-avatar">
+                          <img class="img-fluid rounded-circle" src="/assets/images/black female avatar.png" alt="Image Description">
+                          <span class="badge badge-xs badge-outline-warning badge-pos badge-pos--bottom-right rounded-circle"></span>
                         </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Gender: </span>
-                          <span>Female</span>
+
+                        <div class="ml-3">
+                          <span class="d-block text-dark">Arla</span>
+                          <small class="d-block text-secondary">Black Female Age 18 - 20</small>
                         </div>
-                      </div>
+                      </a>
+                      <!-- End User -->
                     </div>
                   </div>
-                  <!-- End User Profile Section -->
-                  <!-- User Profile Section -->
-                  <div class="media d-flex flex-column align-items-center">
-                    <div class="u-xl-avatar position-relative mb-3 mb-sm-0 mr-4">
-                      <img class="img-fluid rounded-circle" src="/assets/images/black female avatar.png"
-                        alt="Image Description">
-                    </div>
-
-                    <div class="media-body">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <h1 class="h3 font-weight-medium">Arlo R</h1>
-                      </div>
-
-                      <div class="row text-secondary font-size-1 mb-2 flex-column">
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Age: </span>
-                          <span>33</span>
-                        </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Ethnicity: </span>
-                          <span>Black</span>
-                        </div>
-                        <div class="col-auto">
-                          <span class="h6 font-weight-semi-bold">Gender: </span>
-                          <span>Male: </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End User Profile Section -->
-                </div>
+                  <!-- End Contacts  -->
               </div>
             </div>
             <!-- End Mockup Block -->
@@ -1268,14 +547,17 @@
 
     <!-- What We Do Section -->
     <div id="whatWeDoSection" class="container space-2 space-md-3">
-      <div class="row justify-content-lg-between">
-        <div class="col-lg-4 mb-7 mb-lg-0">
+      <div class="row text-center">
+        <div class="col-md-6">
           <!-- Title -->
-          <small class="text-secondary text-uppercase font-weight-medium mb-2">What we do?</small>
-          <h3 class="font-weight-medium">More control and greater overview from simple, powerful features</h3>
-          <p>This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+          <h3 class="h2 font-weight-semi-bold">TARGET MARKETING &amp; ADVERTISING</h3>
+          <p class="h4 text-muted font-weight-light">
+            Based on the findings from the demographic data, we are able to determine the best modes and platforms for marketing and advertising.
+          </p>
           <!-- End Title -->
-
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div id="mapid"></div>
         </div>
       </div>
     </div>
@@ -1652,6 +934,198 @@
   <script src="https://austindevs.github.io/front/assets/js/components/hs.fancybox.js"></script>
   <script src="https://austindevs.github.io/front/assets/js/components/hs.validation.js"></script>
   <script src="https://austindevs.github.io/front/assets/js/components/hs.go-to.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.2/heatmap.min.js"></script>
+  <script src="https://raw.githack.com/pa7/heatmap.js/master/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
+  <script>
+    var randomScalingFactor = function() {
+      return Math.round(Math.random() * 100);
+    };
+
+    var backgroundColor = [
+      '#ff5252',
+      '#7c4dff',
+      '#69f0ae',
+      '#ff8f00',
+      '#29b6f6',
+      // '#e040fb',
+      // '#ff6e40',
+      // '#009688',
+      // '#40c4ff',
+      // '#536dfe',
+      // '#ff4081'
+    ]
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [
+          {
+            data: [
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            backgroundColor: backgroundColor,
+          },
+          // {
+          //   backgroundColor: backgroundColor,
+          //   "data": [
+          //     // 0,
+          //     // 0,
+          //     // 0,
+          //     // 0,
+          //     // 0,
+          //     // randomScalingFactor(),
+          //     // randomScalingFactor(),
+          //     // randomScalingFactor(),
+          //     // randomScalingFactor(),
+          //     // 0,
+          //     // 0
+          //   ],
+          // },
+          // {
+          //   backgroundColor: backgroundColor,
+          //   "data": [
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     0,
+          //     randomScalingFactor(),
+          //     randomScalingFactor()
+          //   ],
+          // }
+        ],
+        labels: [
+          'Age: 18-19',
+          'Age: 20-21',
+          'Age: 22-23',
+          'Age: 24-25',
+          'Age: 26-27',
+          // 'White',
+          // 'Black',
+          // 'Hispanic',
+          // 'Asian',
+          // 'Male',
+          // 'Female'
+        ]
+      },
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Demographics'
+        },
+        legend: {
+          labels: {
+            fontSize: 10,
+            boxWidth: 25,
+            position: 'left'
+          }
+        }
+      }
+    };
+    $('#pills-three-tab').click(function() {
+      setTimeout(function() {
+        var ctx = document.getElementById('chart-area').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+      }, 500)
+
+    })
+  </script>
+  <script>
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+    }
+    $(function() {
+      var testData = {
+        max: 8,
+        data: new Array(10).fill(null).map(() => ({
+          lat: getRandomIntInclusive(31, 40),
+          lng: getRandomIntInclusive(-110, -85),
+          count: getRandomIntInclusive(1, 8)
+        }))
+      };
+
+      var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+      });
+
+      var cfg = {
+        // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+        // if scaleRadius is false it will be the constant radius used in pixels
+        "radius": 2,
+        "maxOpacity": .8,
+        // scales the radius based on map zoom
+        "scaleRadius": true,
+        // if set to false the heatmap uses the global maximum for colorization
+        // if activated: uses the data maximum within the current map boundaries
+        //   (there will always be a red spot with useLocalExtremas true)
+        "useLocalExtrema": true,
+        // which field name in your data represents the latitude - default "lat"
+        latField: 'lat',
+        // which field name in your data represents the longitude - default "lng"
+        lngField: 'lng',
+        // which field name in your data represents the data value - default "value"
+        valueField: 'count'
+      };
+
+
+      var heatmapLayer = new HeatmapOverlay(cfg);
+
+      var mymap = L.map('mapid', {
+        center: new L.LatLng(30.266667, -97.733333),
+        zoom: 4,
+        layers: [Esri_WorldTopoMap, heatmapLayer],
+        scrollWheelZoom: false
+      })
+
+      heatmapLayer.setData(testData);
+    })
+  </script>
+  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7]
+      ]);
+
+      var options = {
+        title: 'My Daily Activities',
+        is3D: true,
+        'width': 600,
+        'height': 300
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    }
+  </script> -->
+
 
   <!-- JS Plugins Init. -->
   <script>
